@@ -2,6 +2,7 @@
 galaxy_info:
   author: "Rodrigo Souza"
   license: license (BSD)
+  description: Highly configurable role to cloud init in vms at it proxmox
   min_ansible_version: 2.0
   platforms:
    - name: EL
