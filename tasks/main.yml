@@ -1,0 +1,18 @@
+- name: waiting the host terminate the clone
+  wait_for:
+    timeout: 20
+
+- name: Test in access host
+  ping:
+
+- name: Applying resizing in the disk
+  command: sudo qm resize "{{ newid }}" scsi0 "{{ size }}"
+
+- name: Settinging the user and nameserver in Cloud Init
+  command: sudo qm set "{{ newid }}" --nameserver "{{ nameserver }}" --ciuser "{{ ciuser }}" --cipassword "{{ cipassword }}" --sshkey "{{ sshkey }}"
+
+- name: Settinging the newtork in host
+  command: sudo qm set "{{ newid }}" --net0 model=virtio,bridge=vmbr0,macaddr="{{ macaddr }}"
+
+- name: Settinging the newtork in Cloud Init
+  command: sudo qm set "{{ newid }}" --ipconfig0 ip="{{ ip }}",gw="{{ gw }}"

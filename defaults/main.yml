@@ -1,0 +1,10 @@
+---
+newid: 480
+size: 20G
+nameserver: '8.8.8.8'
+ciuser: user
+cipassword: 'doctor_stranger'
+sshkey: /root/.ssh/id_rsa.pub
+macaddr: 02:00:00:02:80:de
+ip: 30.20.200.12/24
+gw: 30.20.200.1
